@@ -1,5 +1,5 @@
 # 💫 About Me:
-# Hi, I'm Lakshiyien 👋<br><br>🎓 Statistics Undergraduate at University of Auckland  <br>📊 Interested in Data Analytics, Statistical Modelling & Quantitative Finance  <br>📍 Auckland, New Zealand  <br><br>---<br><br>## 🛠 Technical Skills<br><br>**Languages:** R, Python (basic), SQL (learning)  <br>**Tools:** tidyverse, ggplot2, Excel  <br>**Concepts:** Regression, Hypothesis Testing, Exploratory Data Analysis  <br><br>---<br><br>## 📫 Connect With Me<br>[LinkedIn](https://www.linkedin.com/in/l-namasivayam/)
+# Hi, I'm Lakshiyien 👋<br><br>🎓 Statistics Undergraduate at University of Auckland  <br>📊 Interested in Data Analytics, Statistical Modelling & Quantitative Finance  <br>📍 Auckland, New Zealand  <br><br>---<br><br>## 🛠 Technical Skills<br><br>**Languages:** R, Python, SQL   <br>**Tools:** tidyverse, ggplot2, Excel  <br>**Concepts:** Regression, Hypothesis Testing, Exploratory Data Analysis  <br><br>---<br><br>## 📫 Connect With Me<br>[LinkedIn](https://www.linkedin.com/in/l-namasivayam/)
 
 
 ## 🌐 Socials:
