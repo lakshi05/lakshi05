@@ -9,9 +9,9 @@ Specialising in Statistical Modelling, Automation, & Agentic Data Workflows
 
 ### 🛠️ Core Stack
 
-![R](https://shields.io)
-![Python](https://shields.io)
-![SQL](https://shields.io)
+- **📊 Data Analysis & Modelling:** R, R Markdown
+- **🐍 Scripting & Automation:** Python, Bash Shell
+- **🗄️ Database Management:** SQL (PostgreSQL / MySQL)
 
 ---
 
@@ -25,8 +25,8 @@ Specialising in Statistical Modelling, Automation, & Agentic Data Workflows
 
 ### 🤝 Let's Connect
 
-[![LinkedIn](https://shields.io)](https://linkedin.com)
-[![Email](https://shields.io)](mailto:lakshiyien777@gmail.com)
+- **💼 LinkedIn:** [://linkedin.com](https://www.://linkedin.com)
+- **✉️ Email:** [lakshiyien777@gmail.com](mailto:lakshiyien777@gmail.com)
 
 ---
 
