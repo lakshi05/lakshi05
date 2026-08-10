@@ -25,7 +25,7 @@ Specialising in Statistical Modelling, Automation, & Agentic Data Workflows
 
 ### 🤝 Let's Connect
 
-- **💼 LinkedIn:** [://linkedin.com](https://www.://linkedin.com)
+- **💼 LinkedIn:** [://linkedin.com](https://www.linkedin.com/in/l-namasivayam/)
 - **✉️ Email:** [lakshiyien777@gmail.com](mailto:lakshiyien777@gmail.com)
 
 ---
