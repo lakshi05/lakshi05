@@ -257,32 +257,29 @@
       </div>
     </div>
 
-    <!-- Native Netlify Form -->
-    <form name="contact" method="POST" data-netlify="true" class="space-y-4 text-left bg-slate-900/40 p-6 rounded-xl border border-slate-800 backdrop-blur">
-      <input type="hidden" name="form-name" value="contact" />
+ <!-- Native Netlify Form with explicit action page -->
+<form name="contact" method="POST" action="/success.html" data-netlify="true" class="space-y-4 text-left bg-slate-900/40 p-6 rounded-xl border border-slate-800 backdrop-blur">
+  <input type="hidden" name="form-name" value="contact" />
+  
+  <div>
+    <label class="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
+    <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
+  </div>
 
-      <div>
-        <label class="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
-        <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
-      </div>
+  <div>
+    <label class="block text-xs font-mono text-slate-400 mb-1">Your Email</label>
+    <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
+  </div>
 
-      <div>
-        <label class="block text-xs font-mono text-slate-400 mb-1">Your Email</label>
-        <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
-      </div>
+  <div>
+    <label class="block text-xs font-mono text-slate-400 mb-1">Message</label>
+    <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition"></textarea>
+  </div>
 
-      <div>
-        <label class="block text-xs font-mono text-slate-400 mb-1">Message</label>
-        <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition"></textarea>
-      </div>
-
-      <button type="submit" class="w-full bg-teal-400/10 text-teal-400 border border-teal-400 font-medium py-3 rounded hover:bg-teal-400/20 transition shadow-lg shadow-teal-500/10">
-        Send Message
-      </button>
-    </form>
-
-    <p class="text-xs text-center text-slate-600 mt-16">Deployed via Netlify • Lakshiyien Namasivayam</p>
-  </footer>
+  <button type="submit" class="w-full bg-teal-400/10 text-teal-400 border border-teal-400 font-medium py-3 rounded hover:bg-teal-400/20 transition shadow-lg shadow-teal-500/10">
+    Send Message
+  </button>
+</form>
 
   <!-- Scripts -->
   <script>
