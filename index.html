@@ -243,7 +243,7 @@
     </div>
   </section>
 
-  <!-- Interactive Contact Section (Netlify Form + Copy Button) -->
+  <!-- Interactive Contact Section -->
   <footer id="contact" class="max-w-xl mx-auto px-6 py-20 border-t border-slate-800/80">
     <div class="text-center mb-8">
       <h2 class="text-3xl font-bold text-slate-100">Get In Touch</h2>
@@ -257,32 +257,72 @@
       </div>
     </div>
 
- <!-- Native Netlify Form with explicit action page -->
-<form name="contact" method="POST" action="/success.html" data-netlify="true" class="space-y-4 text-left bg-slate-900/40 p-6 rounded-xl border border-slate-800 backdrop-blur">
-  <input type="hidden" name="form-name" value="contact" />
-  
-  <div>
-    <label class="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
-    <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
-  </div>
+    <!-- AJAX Netlify Form -->
+    <form id="contact-form" name="contact" method="POST" data-netlify="true" class="space-y-4 text-left bg-slate-900/40 p-6 rounded-xl border border-slate-800 backdrop-blur">
+      <input type="hidden" name="form-name" value="contact" />
 
-  <div>
-    <label class="block text-xs font-mono text-slate-400 mb-1">Your Email</label>
-    <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
-  </div>
+      <div>
+        <label class="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
+        <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
+      </div>
 
-  <div>
-    <label class="block text-xs font-mono text-slate-400 mb-1">Message</label>
-    <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition"></textarea>
-  </div>
+      <div>
+        <label class="block text-xs font-mono text-slate-400 mb-1">Your Email</label>
+        <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
+      </div>
 
-  <button type="submit" class="w-full bg-teal-400/10 text-teal-400 border border-teal-400 font-medium py-3 rounded hover:bg-teal-400/20 transition shadow-lg shadow-teal-500/10">
-    Send Message
-  </button>
-</form>
+      <div>
+        <label class="block text-xs font-mono text-slate-400 mb-1">Message</label>
+        <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition"></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn" class="w-full bg-teal-400/10 text-teal-400 border border-teal-400 font-medium py-3 rounded hover:bg-teal-400/20 transition shadow-lg shadow-teal-500/10">
+        Send Message
+      </button>
+      
+      <!-- Status Feedback message -->
+      <div id="form-status" class="hidden text-center text-xs font-mono py-2 rounded mt-2"></div>
+    </form>
+
+    <p class="text-xs text-center text-slate-600 mt-16">Deployed via Netlify • Lakshiyien Namasivayam</p>
+  </footer>
 
   <!-- Scripts -->
   <script>
+    // AJAX Netlify Form Submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitBtn = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      const formData = new FormData(form);
+
+      submitBtn.innerText = 'Sending...';
+      submitBtn.disabled = true;
+
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        status.classList.remove('hidden', 'text-red-400', 'bg-red-950/50');
+        status.classList.add('text-teal-400', 'bg-teal-950/50', 'border', 'border-teal-800');
+        status.innerText = '✓ Message sent successfully! Thanks for reaching out.';
+        form.reset();
+        submitBtn.innerText = 'Send Message';
+        submitBtn.disabled = false;
+      })
+      .catch((error) => {
+        status.classList.remove('hidden', 'text-teal-400', 'bg-teal-950/50');
+        status.classList.add('text-red-400', 'bg-red-950/50', 'border', 'border-red-800');
+        status.innerText = '✕ Error sending message. Please use the copy email button above.';
+        submitBtn.innerText = 'Send Message';
+        submitBtn.disabled = false;
+      });
+    });
+
     // Copy Email to Clipboard
     function copyEmail() {
       navigator.clipboard.writeText('lakshiyien777@gmail.com');
