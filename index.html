@@ -18,11 +18,11 @@
   <nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
     <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#" class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400 hover:opacity-80 transition">Lakshiyien N.</a>
-      <div class="space-x-6 text-sm text-slate-400 font-medium">
+      <div class="space-x-6 text-sm text-slate-400 font-medium hidden sm:block">
         <a href="#about" class="hover:text-teal-400 transition">About</a>
         <a href="#skills" class="hover:text-teal-400 transition">Skills</a>
         <a href="#projects" class="hover:text-teal-400 transition">Projects</a>
-        <a href="#analytics" class="hover:text-teal-400 transition">Interactive Analytics</a>
+        <a href="#analytics" class="hover:text-teal-400 transition">Analytics</a>
         <a href="#experience" class="hover:text-teal-400 transition">Experience</a>
         <a href="#contact" class="hover:text-teal-400 transition">Contact</a>
       </div>
@@ -30,7 +30,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <header id="about" class="max-w-5xl mx-auto px-6 py-24 sm:py-32">
+  <header id="about" class="max-w-5xl mx-auto px-6 py-20 sm:py-32">
     <p class="text-teal-400 font-mono text-sm mb-3">Hi, my name is</p>
     <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-100">
       Lakshiyien Namasivayam.
@@ -52,7 +52,7 @@
     </div>
 
     <div class="mt-8 flex flex-wrap gap-4">
-      <a href="mailto:lakshiyien777@gmail.com" class="px-6 py-3 border border-teal-400 text-teal-400 font-medium rounded hover:bg-teal-400/10 transition shadow-lg shadow-teal-500/10">Get In Touch</a>
+      <a href="#contact" class="px-6 py-3 border border-teal-400 text-teal-400 font-medium rounded hover:bg-teal-400/10 transition shadow-lg shadow-teal-500/10">Get In Touch</a>
       <a href="https://www.linkedin.com/in/l-namasivayam" target="_blank" rel="noopener noreferrer" class="px-6 py-3 border border-slate-700 text-slate-300 font-medium rounded hover:border-slate-500 hover:bg-slate-800/50 transition">LinkedIn</a>
       <a href="https://github.com/lakshi05" target="_blank" rel="noopener noreferrer" class="px-6 py-3 border border-slate-700 text-slate-300 font-medium rounded hover:border-slate-500 hover:bg-slate-800/50 transition">GitHub</a>
     </div>
@@ -128,7 +128,7 @@
       <h2 class="text-2xl font-bold text-slate-100 border-l-4 border-teal-400 pl-3 mb-4 sm:mb-0">Featured Projects</h2>
       
       <!-- Category Filters -->
-      <div class="flex space-x-2 bg-slate-900/80 p-1 rounded-lg border border-slate-800 font-mono text-xs">
+      <div class="flex space-x-2 bg-slate-900/80 p-1 rounded-lg border border-slate-800 font-mono text-xs w-max">
         <button onclick="filterProjects('all')" class="project-tab active px-3 py-1.5 rounded text-slate-300 hover:text-teal-400 transition bg-teal-400/10 text-teal-400 border border-teal-400/30" id="tab-all">All</button>
         <button onclick="filterProjects('r')" class="project-tab px-3 py-1.5 rounded text-slate-300 hover:text-teal-400 transition" id="tab-r">R</button>
         <button onclick="filterProjects('automation')" class="project-tab px-3 py-1.5 rounded text-slate-300 hover:text-teal-400 transition" id="tab-automation">Automation</button>
@@ -243,27 +243,60 @@
     </div>
   </section>
 
-<!-- Contact Footer -->
-<footer id="contact" class="max-w-5xl mx-auto px-6 py-20 text-center border-t border-slate-800/80">
-  <h2 class="text-3xl font-bold text-slate-100">Get In Touch</h2>
-  <p class="text-slate-400 max-w-md mx-auto mt-3 text-sm">
-    Open to Auckland Data & Analytics Internships for 2026. Feel free to drop an email or reach out on LinkedIn!
-  </p>
-  
-  <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-    <a href="mailto:lakshiyien777@gmail.com" class="text-teal-400 border border-teal-400 px-6 py-3 rounded hover:bg-teal-400/10 transition inline-block font-medium shadow-lg shadow-teal-500/10">
-      Open Email App
-    </a>
-    <button onclick="copyEmail()" id="copy-btn" class="text-slate-300 border border-slate-700 px-6 py-3 rounded hover:border-slate-500 hover:bg-slate-800/50 transition font-medium">
-      Copy Email Address
-    </button>
-  </div>
+  <!-- Interactive Contact Section (Netlify Form + Copy Button) -->
+  <footer id="contact" class="max-w-xl mx-auto px-6 py-20 border-t border-slate-800/80">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-slate-100">Get In Touch</h2>
+      <p class="text-slate-400 mt-2 text-sm">
+        Open to Auckland Data & Analytics Internships for 2026. Send a message directly or copy my email below!
+      </p>
+      <div class="mt-4 flex justify-center items-center gap-3">
+        <button onclick="copyEmail()" id="copy-btn" class="text-teal-400 border border-teal-400/60 bg-teal-400/5 px-4 py-2 rounded text-xs font-mono hover:bg-teal-400/10 transition">
+          📋 Copy Email Address (lakshiyien777@gmail.com)
+        </button>
+      </div>
+    </div>
 
-  <p class="text-xs text-slate-600 mt-16">Deployed via Netlify • Lakshiyien Namasivayam</p>
-</footer>
+    <!-- Native Netlify Form -->
+    <form name="contact" method="POST" data-netlify="true" class="space-y-4 text-left bg-slate-900/40 p-6 rounded-xl border border-slate-800 backdrop-blur">
+      <input type="hidden" name="form-name" value="contact" />
 
-  <!-- Filter & Chart Script -->
+      <div>
+        <label class="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
+        <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
+      </div>
+
+      <div>
+        <label class="block text-xs font-mono text-slate-400 mb-1">Your Email</label>
+        <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition">
+      </div>
+
+      <div>
+        <label class="block text-xs font-mono text-slate-400 mb-1">Message</label>
+        <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-teal-400 transition"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-teal-400/10 text-teal-400 border border-teal-400 font-medium py-3 rounded hover:bg-teal-400/20 transition shadow-lg shadow-teal-500/10">
+        Send Message
+      </button>
+    </form>
+
+    <p class="text-xs text-center text-slate-600 mt-16">Deployed via Netlify • Lakshiyien Namasivayam</p>
+  </footer>
+
+  <!-- Scripts -->
   <script>
+    // Copy Email to Clipboard
+    function copyEmail() {
+      navigator.clipboard.writeText('lakshiyien777@gmail.com');
+      const btn = document.getElementById('copy-btn');
+      btn.innerText = 'Copied to Clipboard! ✓';
+      setTimeout(() => {
+        btn.innerText = '📋 Copy Email Address (lakshiyien777@gmail.com)';
+      }, 2500);
+    }
+
+    // Filter Projects
     function filterProjects(category) {
       const cards = document.querySelectorAll('.project-card');
       const tabs = document.querySelectorAll('.project-tab');
@@ -280,6 +313,7 @@
       });
     }
 
+    // Interactive Chart
     document.addEventListener('DOMContentLoaded', function() {
       const ctx = document.getElementById('housingChart').getContext('2d');
       new Chart(ctx, {
